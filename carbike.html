@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultimate Car & Bike Gallery</title>
+    <style>
+        /* Reset Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Header */
+        h1 {
+            font-size: 40px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Navigation Menu */
+        .menu {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .menu button {
+            background: linear-gradient(135deg, #ff0000, #990000);
+            color: white;
+            padding: 12px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .menu button:hover {
+            background: linear-gradient(135deg, #cc0000, #660000);
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
+        }
+
+        /* Gallery Container */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover::before {
+            opacity: 1;
+        }
+
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .gallery-item:hover .caption {
+            opacity: 1;
+        }
+
+
+
+         .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 18px;
+            background: grey;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+        .back-btn:hover {
+            background: black;
+            transform: scale(1.08);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+
+   
+    <h1>Ultimate Car & Bike Gallery</h1>
+
+    <!-- Motorcycle Gallery -->
+    <h2 id="motorcycles">Motorcycle Gallery</h2>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="images/bike1.jpg" alt="Motorcycle 1">
+            <div class="caption">Urban Ride</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/bike2.jpg" alt="Motorcycle 2">
+            <div class="caption">cafe racer</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/bike3.jpg" alt="Motorcycle 3">
+            <div class="caption">trail</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/bike4.jpg" alt="Motorcycle 4">
+            <div class="caption">retro</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/bike5.jpg" alt="Motorcycle 5">
+            <div class="caption">Speed Beast</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/bike6.jpg" alt="Motorcycle 6">
+            <div class="caption">power machine</div>
+        </div>
+    </div>
+
+    <!-- Car Gallery -->
+    <h2 id="cars">Classic Car Gallery</h2>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="images/redfordmustang.jpg" alt="Red Mustang Front">
+            <div class="caption">Classic Red Mustang</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/sideview.jpg" alt="Mustang Side View">
+            <div class="caption">Side View in Nature</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/mustanginterior.jpg" alt="Mustang Interior">
+            <div class="caption">Luxury Interior</div>
+        </div>
+    </div>
+
+    <!-- Luxury Car Gallery -->
+    <h2 id="luxury">Luxury Car Gallery</h2>
+    <div class="gallery-container">
+        <div class="gallery-item">
+            <img src="images/car1.avif" alt="Mercedes-AMG Front View">
+            <div class="caption">Gwagon</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/car2.jpg" alt="Side Profile of AMG">
+            <div class="caption">Sleek Side Profile</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/car3.jpg" alt="AMG GTC Badge">
+            <div class="caption">sclass</div>
+        </div>
+    </div>
+         <a href="index.html" class="back-btn">⬅ Back to Home</a>
+</body>
+</html>
+

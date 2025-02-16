@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Car Collage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: linear-gradient(skyblue ,lightblue , pink);
+        }
+
+        .collage-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto;
+            gap: 10px;
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .collage-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Image placement based on reference collage */
+        .img1 {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .img2 {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .img3, .img4 {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .img5 {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .img6 {
+            grid-column: span 1;
+            grid-row: span 1;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%, 0 90%);
+        }
+
+        .img7 {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            .collage-container {
+                grid-template-columns: 1fr;
+            }
+
+            .img1, .img5, .img7 {
+                grid-column: span 1;
+            }
+        }
+
+        /* Back button styling */
+        .back-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 16px;
+            background: skyblue;
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .back-btn:hover {
+            background: red;
+            transform: scale(1.08);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Center the button */
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="collage-container">
+        <img src="images/cp7.jpg" alt="Couple in Car" class="img1">
+        <img src="images/cp2.jpg" alt="Woman Sitting" class="img2">
+        <img src="images/cp3.jpg" alt="Couple Standing" class="img3">
+        <img src="images/cp4.jpg" alt="Couple by Car" class="img4">
+        <img src="images/cp5.jpg" alt="Retro Style" class="img5">
+        <img src="images/cp6.jpg" alt="Car with Luggage" class="img6">
+        <img src="images/cp1.jpg" alt="Vintage Car Scene" class="img7">
+    </div>
+
+    <!-- Centered Button Below Collage -->
+    <div class="button-container">
+        <a href="index.html" class="back-btn">⬅ Back to Home</a>
+    </div>
+
+</body>
+</html>
